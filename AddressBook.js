@@ -196,3 +196,31 @@ function createContact()
 
 createContact();
 console.log(contact.toString()); 
+
+//uc4 edit contact
+function editContact(fullname)
+{
+    contact.forEach(
+        c => {
+            if((c._firstname + " " + c._lastname) == fullname)
+            {
+                let choice = parseInt(prompt('Enter choice : 1. Edit Phone Number 2. Edit email 3. Exit'));
+                switch(choice)
+                {
+                    case 1 : let phone = prompt('Enter phone number : ');
+                             c._phonenumber = phone;
+                             break;
+                    
+                    case 2 : let email = prompt('Enter email : ');
+                             c._emailaddress = email;
+                             break;
+                    
+                    case 3 : return;
+                }
+            }
+    });
+}
+
+let fullname = prompt('Enter full name : ');
+editContact(fullname);
+console.log(contact.toString());
