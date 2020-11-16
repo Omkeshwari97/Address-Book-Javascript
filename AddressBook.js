@@ -204,7 +204,7 @@ function createContact()
 
 createContact();
 console.log(contact.toString()); 
-/*
+
 //uc4 edit contact
 function editContact(fullname)
 {
@@ -257,7 +257,7 @@ function contactCount()
     console.log("Total Contacts : " + contact.length);
 }
 contactCount();
-*/
+
 //uc7 check duplicates
 function duplicateCheck(newContact)
 {
@@ -269,7 +269,7 @@ function duplicateCheck(newContact)
             }
     });
 }
-/*
+
 //uc8 search by city state
 function searchPersonByCity(fullname, city)
 {
@@ -354,8 +354,8 @@ function compareByName(a, b)
     console.log(contact.toString());    
   }
   sortByName();
-  */
-  //uc12
+  
+  //uc12 sort entries by zip
   function compareByZip(a, b) 
   {
       if (a._zipnumber < b._zipnumber)
