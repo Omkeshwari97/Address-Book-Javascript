@@ -221,6 +221,26 @@ function editContact(fullname)
     });
 }
 
-let fullname = prompt('Enter full name : ');
-editContact(fullname);
+let editfullname = prompt('Enter full name to be edited : ');
+editContact(editfullname);
 console.log(contact.toString());
+
+//uc5 delete contact
+function deleteContact(fullname)
+{
+    let i = 0;
+    contact.forEach(
+        c => {
+            if((c._firstname + " " + c._lastname) == fullname)
+            {
+                contact.splice(i, 1);
+            }
+        i++;
+    });
+}
+
+let deletefullname = prompt('Enter full name to be deleted : ');
+deleteContact(deletefullname);
+console.log(contact.toString());
+
+
