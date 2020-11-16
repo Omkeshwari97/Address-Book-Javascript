@@ -285,11 +285,11 @@ function searchPersonByState(fullname, state)
 
 let fullnameforcity = prompt('Enter full name : ');
 let searchCity = prompt('Enter city : ');
-console.log("Person in" + searchCity + " is : " + searchPersonByCity(fullnameforcity, searchCity));
+console.log("Person in " + searchCity + " is : " + searchPersonByCity(fullnameforcity, searchCity));
 
 let fullnameforstate = prompt('Enter full name : ');
 let searchState = prompt('Enter state : ');
-console.log("Person in" + searchState + " is : " + searchPersonByState(fullnameforstate, searchState));
+console.log("Person in " + searchState + " is : " + searchPersonByState(fullnameforstate, searchState));
 
 //uc9 view contact by city state
 function viewPersonsByCity(city)
@@ -305,8 +305,27 @@ function viewPersonsByState(state)
 }
 
 let viewbycity = prompt('Enter city : ');
-console.log("Persons in" + viewbycity + " are : " + viewPersonsByCity(viewbycity));
+console.log("Persons in " + viewbycity + " are : " + viewPersonsByCity(viewbycity));
 
 let viewbystate = prompt('Enter state : ');
-console.log("Persons in" + viewbystate + " are : " + viewPersonsByState(viewbystate));
+console.log("Persons in " + viewbystate + " are : " + viewPersonsByState(viewbystate));
+
+//uc10 contact count by city state
+function countPersonsByCity(city)
+{
+    let list = contact.filter(c => c._cityname == city);
+    return list.length;
+}
+
+function countPersonsByState(state)
+{
+    let list = contact.filter(c => c._statename == state);
+    return list.length;
+}
+
+let countbycity = prompt('Enter city : ');
+console.log("Total Persons in " + countbycity + " are : " + countPersonsByCity(countbycity));
+
+let countbystate = prompt('Enter state : ');
+console.log("Total Persons in " + countbystate + " are : " + countPersonsByState(countbystate));
 
