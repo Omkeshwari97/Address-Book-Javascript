@@ -329,3 +329,29 @@ console.log("Total Persons in " + countbycity + " are : " + countPersonsByCity(c
 let countbystate = prompt('Enter state : ');
 console.log("Total Persons in " + countbystate + " are : " + countPersonsByState(countbystate));
 
+//uc11 sort entries by name
+function compare(a, b) 
+{
+    let contact1 = (a._firstname + " " + a._lastname).toLowerCase();
+    let contact2 = (b._firstname + " " + b._lastname).toLowerCase(); 
+ 
+    if (contact1 < contact2)
+    {
+      return -1;
+    }
+    
+    if (contact1 > contact2)
+    {
+      return 1;
+    }
+
+    return 0;
+  }
+  
+  function sortByName() 
+  {
+    contact.sort(compare);
+    console.log(contact.toString());    
+  }
+  sortByName();
+  
