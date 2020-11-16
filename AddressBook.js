@@ -251,14 +251,14 @@ let deletefullname = prompt('Enter full name to be deleted : ');
 deleteContact(deletefullname);
 console.log(contact.toString());
 
-//uc6
+//uc6 count contact
 function contactCount()
 {
     console.log("Total Contacts : " + contact.length);
 }
 contactCount();
 
-//uc7
+//uc7 check duplicates
 function duplicateCheck(newContact)
 {
     contact.forEach(
@@ -269,4 +269,27 @@ function duplicateCheck(newContact)
             }
     });
 }
+
+//uc8 search by city state
+function searchPersonByCity(fullname, city)
+{
+    return contact.filter(c => c._cityname == city)
+                    .filter(c => (c._firstname + " " + c._lastname) == fullname);
+}
+
+function searchPersonByState(fullname, state)
+{
+    return contact.filter(c => c._statename == state)
+                    .filter(c => (c._firstname + " " + c._lastname) == fullname);
+}
+
+let fullnameforcity = prompt('Enter full name : ');
+let searchCity = prompt('Enter city : ');
+console.log("Person in" + searchCity + " is : " + searchPersonByCity(fullnameforcity, searchCity));
+
+let fullnameforstate = prompt('Enter full name : ');
+let searchState = prompt('Enter state : ');
+console.log("Person in" + searchState + " is : " + searchPersonByState(fullnameforstate, searchState));
+
+
 
