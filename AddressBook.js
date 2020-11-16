@@ -189,7 +189,15 @@ function createContact()
         let email = prompt('Enter email : ');
 
         var cobj = new Contact(fname, lname, addr, city, state, zip, phone, email);
-        contact.push(cobj);
+        
+        if(duplicateCheck(cobj))
+        {
+            console.log("Details already exists!");
+        }    
+        else
+        {
+            contact.push(cobj);
+        }
         contactcount++;
     }
 }
@@ -250,4 +258,15 @@ function contactCount()
 }
 contactCount();
 
+//uc7
+function duplicateCheck(newContact)
+{
+    contact.forEach(
+        c => {
+            if((c._firstname + " " + c._lastname) == (newContact._firstname + " " + newContact._lastname))
+            {
+                return true;
+            }
+    });
+}
 
