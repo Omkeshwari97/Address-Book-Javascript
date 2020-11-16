@@ -291,5 +291,22 @@ let fullnameforstate = prompt('Enter full name : ');
 let searchState = prompt('Enter state : ');
 console.log("Person in" + searchState + " is : " + searchPersonByState(fullnameforstate, searchState));
 
+//uc9 view contact by city state
+function viewPersonsByCity(city)
+{
+    let list = contact.filter(c => c._cityname == city);
+    return list;
+}
 
+function viewPersonsByState(state)
+{
+    let list = contact.filter(c => c._statename == state);
+    return list;
+}
+
+let viewbycity = prompt('Enter city : ');
+console.log("Persons in" + viewbycity + " are : " + viewPersonsByCity(viewbycity));
+
+let viewbystate = prompt('Enter state : ');
+console.log("Persons in" + viewbystate + " are : " + viewPersonsByState(viewbystate));
 
