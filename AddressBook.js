@@ -243,4 +243,11 @@ let deletefullname = prompt('Enter full name to be deleted : ');
 deleteContact(deletefullname);
 console.log(contact.toString());
 
+//uc6
+function contactCount()
+{
+    console.log("Total Contacts : " + contact.length);
+}
+contactCount();
+
 
