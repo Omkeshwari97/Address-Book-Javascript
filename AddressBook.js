@@ -1,9 +1,10 @@
 var prompt = require('prompt-sync')();
 
-//uc1 create contact
+//uc3 addressbook array
 let contact = new Array();
 let contactcount = 0;
 
+//uc2 regex
 let regex1 = RegExp('^[A-Z]{1}[a-z]{2,}$');
 let regex2 = RegExp('^[A-za-z]{4,}$');
 let zipregex = RegExp('^[0-9]{6}$');
@@ -173,21 +174,25 @@ class Contact
     }
 }
 
-
-while(contactcount != 2)
+//uc1 create contact
+function createContact()
 {
-    let fname = prompt('Enter first name : ');
-    let lname = prompt('Enter last name : ');
-    let addr = prompt('Enter address : ');
-    let city = prompt('Enter city : ');
-    let state = prompt('Enter state : ');
-    let zip = prompt('Enter zip : ');
-    let phone = prompt('Enter phone number : ');
-    let email = prompt('Enter email : ');
+    while(contactcount != 2)
+    {
+        let fname = prompt('Enter first name : ');
+        let lname = prompt('Enter last name : ');
+        let addr = prompt('Enter address : ');
+        let city = prompt('Enter city : ');
+        let state = prompt('Enter state : ');
+        let zip = prompt('Enter zip : ');
+        let phone = prompt('Enter phone number : ');
+        let email = prompt('Enter email : ');
 
-    var cobj = new Contact(fname, lname, addr, city, state, zip, phone, email);
-    contact.push(cobj);
-    contactcount++;
+        var cobj = new Contact(fname, lname, addr, city, state, zip, phone, email);
+        contact.push(cobj);
+        contactcount++;
+    }
 }
 
+createContact();
 console.log(contact.toString()); 
