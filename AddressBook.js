@@ -204,7 +204,7 @@ function createContact()
 
 createContact();
 console.log(contact.toString()); 
-
+/*
 //uc4 edit contact
 function editContact(fullname)
 {
@@ -257,7 +257,7 @@ function contactCount()
     console.log("Total Contacts : " + contact.length);
 }
 contactCount();
-
+*/
 //uc7 check duplicates
 function duplicateCheck(newContact)
 {
@@ -269,7 +269,7 @@ function duplicateCheck(newContact)
             }
     });
 }
-
+/*
 //uc8 search by city state
 function searchPersonByCity(fullname, city)
 {
@@ -330,7 +330,7 @@ let countbystate = prompt('Enter state : ');
 console.log("Total Persons in " + countbystate + " are : " + countPersonsByState(countbystate));
 
 //uc11 sort entries by name
-function compare(a, b) 
+function compareByName(a, b) 
 {
     let contact1 = (a._firstname + " " + a._lastname).toLowerCase();
     let contact2 = (b._firstname + " " + b._lastname).toLowerCase(); 
@@ -350,8 +350,31 @@ function compare(a, b)
   
   function sortByName() 
   {
-    contact.sort(compare);
+    contact.sort(compareByName);
     console.log(contact.toString());    
   }
   sortByName();
+  */
+  //uc12
+  function compareByZip(a, b) 
+  {
+      if (a._zipnumber < b._zipnumber)
+      {
+        return -1;
+      }
+      
+      if (a._zipnumber > b._zipnumber)
+      {
+        return 1;
+      }
+  
+      return 0;
+    }
+    
+    function sortByZip() 
+    {
+      contact.sort(compareByZip);
+      console.log(contact.toString());    
+    }
+    sortByZip();
   
